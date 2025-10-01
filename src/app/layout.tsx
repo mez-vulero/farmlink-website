@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/site/navbar";
 import { Footer } from "@/components/site/footer";
+import { BookDemoDialogProvider } from "@/components/site/book-demo-dialog-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -52,19 +53,19 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} bg-background/90 text-foreground antialiased`}
       >
-        <div className="relative min-h-screen overflow-x-hidden">
-          <div className="pointer-events-none absolute inset-0 -z-30 bg-gradient-to-b from-[#e6f3ff] via-transparent to-[#e0f2d6]" />
-          <div className="pointer-events-none absolute inset-0 -z-40 bg-[radial-gradient(circle_at_top,_rgba(17,130,198,0.18),_transparent_65%)]" />
-          <div className="pointer-events-none absolute inset-0 -z-50 bg-[radial-gradient(circle_at_bottom_right,_rgba(129,183,87,0.18),_transparent_60%)]" />
-          <Navbar />
-          <main className="mx-auto w-full max-w-6xl px-6 pb-24 pt-16 sm:px-8">
-            {children}
-          </main>
-          <Footer />
-        </div>
+        <BookDemoDialogProvider>
+          <div className="relative min-h-screen overflow-x-hidden">
+            <div className="pointer-events-none absolute inset-0 -z-30 bg-gradient-to-b from-[#e6f3ff] via-transparent to-[#e0f2d6]" />
+            <div className="pointer-events-none absolute inset-0 -z-40 bg-[radial-gradient(circle_at_top,_rgba(17,130,198,0.18),_transparent_65%)]" />
+            <div className="pointer-events-none absolute inset-0 -z-50 bg-[radial-gradient(circle_at_bottom_right,_rgba(129,183,87,0.18),_transparent_60%)]" />
+            <Navbar />
+            <main className="mx-auto w-full max-w-6xl px-6 pb-24 pt-16 sm:px-8">
+              {children}
+            </main>
+            <Footer />
+          </div>
+        </BookDemoDialogProvider>
       </body>
     </html>
   );
 }
-
-

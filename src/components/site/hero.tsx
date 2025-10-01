@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Sparkles, ArrowRight } from "lucide-react";
+import { useBookDemoDialog } from "./book-demo-dialog-provider";
 
 const ParticleLogoCanvas = dynamic(() => import("./particle-logo-canvas"), { ssr: false });
 
@@ -18,6 +19,8 @@ const stats = [
 ];
 
 export function Hero() {
+  const { openDialog } = useBookDemoDialog();
+
   return (
     <section className="relative isolate overflow-hidden">
       <div className="absolute inset-0 -z-10">
@@ -62,11 +65,16 @@ export function Hero() {
           </p>
         </div>
         <div className="flex flex-col items-center gap-3 sm:flex-row">
-          <Button size="lg" className="rounded-full bg-accent px-8 text-accent-foreground hover:bg-accent/90" asChild>
-            <Link href="#cta" className="inline-flex items-center gap-2">
+          <Button
+            size="lg"
+            className="rounded-full bg-accent px-8 text-accent-foreground hover:bg-accent/90"
+            type="button"
+            onClick={openDialog}
+          >
+            <span className="inline-flex items-center gap-2">
               Book a live demo
               <ArrowRight className="h-4 w-4" />
-            </Link>
+            </span>
           </Button>
           <Button size="lg" variant="outline" className="rounded-full border-accent/40 text-accent hover:bg-accent/10" asChild>
             <Link href="#insights">See product overview</Link>
@@ -111,14 +119,3 @@ export function Hero() {
     </section>
   );
 }
-
-
-
-
-
-
-
-
-
-
-

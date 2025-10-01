@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Logo } from "./logo";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { useBookDemoDialog } from "./book-demo-dialog-provider";
 
 const navItems = [
   { href: "#features", label: "Solutions" },
@@ -17,6 +18,12 @@ const navItems = [
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const { openDialog } = useBookDemoDialog();
+
+  const handleBookDemoClick = () => {
+    openDialog();
+    setOpen(false);
+  };
 
   return (
     <header className="sticky top-4 z-50 flex w-full justify-center">
@@ -34,8 +41,12 @@ export function Navbar() {
           ))}
         </nav>
         <div className="hidden items-center gap-2 md:flex">
-          <Button className="rounded-full bg-accent px-5 text-accent-foreground hover:bg-accent/90" asChild>
-            <Link href="#cta">Book a demo</Link>
+          <Button
+            className="rounded-full bg-accent px-5 text-accent-foreground hover:bg-accent/90"
+            type="button"
+            onClick={openDialog}
+          >
+            Book a demo
           </Button>
         </div>
         <Button
@@ -82,10 +93,12 @@ export function Navbar() {
               ))}
             </div>
             <div className="mt-6 flex flex-col gap-3">
-              <Button className="rounded-full bg-accent text-accent-foreground hover:bg-accent/90" asChild>
-                <Link href="#cta" onClick={() => setOpen(false)}>
-                  Book a demo
-                </Link>
+              <Button
+                className="rounded-full bg-accent text-accent-foreground hover:bg-accent/90"
+                type="button"
+                onClick={handleBookDemoClick}
+              >
+                Book a demo
               </Button>
             </div>
           </motion.div>
@@ -94,6 +107,3 @@ export function Navbar() {
     </header>
   );
 }
-
-
-
