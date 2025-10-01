@@ -13,7 +13,7 @@ export function Logo({ withWordmark = true, className }: LogoProps) {
       className={`inline-flex items-center gap-2 rounded-full bg-white/70 px-3 py-1 shadow-sm shadow-primary/20 ring-1 ring-primary/10 backdrop-blur transition hover:ring-primary/30 ${className ?? ""}`}
     >
       <Image
-        src="/FarmLink.png"
+        src="/farmLink.png"
         alt="FarmLink"
         width={withWordmark ? 156 : 120}
         height={48}
