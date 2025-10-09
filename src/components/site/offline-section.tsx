@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -45,34 +45,34 @@ export function OfflineSection() {
             </p>
           </CardHeader>
           <CardContent>
-            <ul className="grid gap-4 text-sm sm:grid-cols-2">
-              <li className="flex items-start gap-3 rounded-2xl bg-white/85 p-4 shadow-sm shadow-accent/10">
-                <span className="mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                  <WifiOff className="h-4 w-4" />
+            <ul className="grid gap-5 text-sm sm:grid-cols-2">
+              <li className="flex items-start gap-5 rounded-2xl bg-white/85 p-5 shadow-sm shadow-accent/10">
+                <span className="mt-1 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-3xl bg-primary/10 text-primary shadow-inner shadow-primary/30 ring-1 ring-primary/15">
+                  <WifiOff className="h-5 w-5" />
                 </span>
                 <span>
                   Offline-first flows for intake, payouts, and inspections with conflict resolution baked in.
                 </span>
               </li>
-              <li className="flex items-start gap-3 rounded-2xl bg-white/85 p-4 shadow-sm shadow-primary/10">
-                <span className="mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-accent text-accent-foreground">
-                  <RefreshCw className="h-4 w-4" />
+              <li className="flex items-start gap-5 rounded-2xl bg-white/85 p-5 shadow-sm shadow-primary/10">
+                <span className="mt-1 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-3xl bg-accent/10 text-accent shadow-inner shadow-accent/30 ring-1 ring-accent/15">
+                  <RefreshCw className="h-5 w-5" />
                 </span>
                 <span>
                   Background sync scheduler prioritizes cherry deliveries and balances before attachments.
                 </span>
               </li>
-              <li className="flex items-start gap-3 rounded-2xl bg-white/85 p-4 shadow-sm shadow-primary/10">
-                <span className="mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                  <Smartphone className="h-4 w-4" />
+              <li className="flex items-start gap-5 rounded-2xl bg-white/85 p-5 shadow-sm shadow-primary/10">
+                <span className="mt-1 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-3xl bg-primary/10 text-primary shadow-inner shadow-primary/30 ring-1 ring-primary/15">
+                  <Smartphone className="h-5 w-5" />
                 </span>
                 <span>
                   Mobile apps bundle their own service worker so modules like payouts and mapping load instantly.
                 </span>
               </li>
-              <li className="flex items-start gap-3 rounded-2xl bg-white/85 p-4 shadow-sm shadow-accent/10">
-                <span className="mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-accent text-accent-foreground">
-                  <ShieldCheck className="h-4 w-4" />
+              <li className="flex items-start gap-5 rounded-2xl bg-white/85 p-5 shadow-sm shadow-accent/10">
+                <span className="mt-1 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-3xl bg-accent/10 text-accent shadow-inner shadow-accent/30 ring-1 ring-accent/15">
+                  <ShieldCheck className="h-5 w-5" />
                 </span>
                 <span>
                   Device policies enforce biometric unlock, remote wipe, and audit trails when data comes back online.
